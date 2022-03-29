@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example</title>
+	</head>
+	<body>
+		<!-- <script type="importmap" src="./imports.json"></script> -->
+		<script type="importmap">
+			{
+				"imports": {
+					"gardens": "./gardens.config.ts",
+					"^/": "./build/"
+				}
+			}
+		</script>
+		<script type="module" src="./build/index.js"></script>
+	</body>
+</html>

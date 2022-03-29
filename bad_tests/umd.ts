@@ -1,18 +1,18 @@
-import gardens from '..';
-import tests from './tests';
+import gardens from "..";
+import tests from "./tests";
 
-tests( gardens );
+tests(gardens);
 
-if ( typeof document !== 'undefined' ) {
-  const container = document.getElementById( 'output' );
-  const stream = {
-    write( output: string ) {
-      container.innerHTML += output;
-    }
-  };
+if (typeof document !== "undefined") {
+	const container = document.getElementById("output");
+	const stream = {
+		write(output: string) {
+			container.innerHTML += output;
+		},
+	};
 
-  tests( gardens, {
-    stream,
-    outputType: 'html'
-  });
+	tests(gardens, {
+		stream,
+		outputType: "html",
+	});
 }

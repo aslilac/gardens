@@ -1,43 +1,43 @@
 {
-  "name": "gardens",
-  "version": "4.2.0",
-  "author": "McKayla Washburn",
-  "description": "A useful logging utility for JavaScript everywhere. 🎉",
-  "license": "MIT",
-  "files": [
-    "dist/*",
-    "native.js"
-  ],
-  "main": "dist/gardens.umd.js",
-  "types": "dist/types/platform/umd.d.ts",
-  "homepage": "https://mckay.la/gardens/",
-  "repository": "partheseas/gardens",
-  "bugs": "https://github.com/partheseas/gardens/issues",
-  "keywords": [
-    "error",
-    "tracking",
-    "logging",
-    "debugging",
-    "utility"
-  ],
-  "dependencies": {
-    "chalk": "^2.4.2",
-    "supports-color": "^6.1.0"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "ava": "^2.2.0",
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.2.2",
-    "rollup": "^1.14.3",
-    "rollup-plugin-babel-minify": "^9.0.0",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "typedoc": "^0.15.0",
-    "typescript": "^3.5.3"
-  },
-  "scripts": {
-    "now-build": "typedoc",
-    "test": "eslint --ext .js,.ts lib && rollup -c && ava"
-  }
+	"name": "gardens",
+	"version": "5.0.0",
+	"author": "McKayla Washburn <mckayla@hey.com>",
+	"description": "A useful logging utility for JavaScript everywhere. 🎉",
+	"license": "MIT",
+	"files": [
+		"dist/*",
+		"native.js"
+	],
+	"main": "./build/index.js",
+	"types": "./build/index.d.ts",
+	"homepage": "https://github.com/aslilac/gardens",
+	"repository": "https://github.com/aslilac/gardens",
+	"bugs": "https://github.com/aslilac/gardens/issues",
+	"keywords": [
+		"error",
+		"tracking",
+		"logging",
+		"debugging",
+		"utility"
+	],
+	"dependencies": {
+		"chalk": "^2.4.2",
+		"supports-color": "^6.1.0"
+	},
+	"devDependencies": {
+		"@mckayla/prettier": "^1.0.1",
+		"@mckayla/tsconfig": "^1.0.2",
+		"eslint-config-mckayla": "^1.0.4",
+		"eslint": "^8.11.0",
+		"prettier": "^2.6.0",
+		"typedoc": "^0.22.13",
+		"typescript": "^4.6.2"
+	},
+	"scripts": {
+		"build": "tsc -b .",
+		"fmt": "prettier --write .",
+		"lint": "eslint .",
+		"test": "jest",
+		"now-build": "typedoc"
+	}
 }

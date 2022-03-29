@@ -1,32 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <title>gardens</title>
+	<head>
+		<title>gardens</title>
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://mckay.la https://fonts.googleapis.com/; font-src https://fonts.gstatic.com/;" />
-  <link rel="stylesheet" type="text/css" href="https://mckay.la/resources/oui/oui.min.css" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; style-src 'self' 'unsafe-inline' https://mckay.la https://fonts.googleapis.com/; font-src https://fonts.gstatic.com/;"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://mckay.la/resources/oui/oui.min.css"
+		/>
 
-  <style type="text/css">
-    body {
-      -webkit-user-select: none;
-      -webkit-app-region: drag;
-    }
-  </style>
-</head>
-<body>
-  <section>
-    <h1>gardens test driver</h1>
-    <p>Tests will be output to the page and to the console. Be sure to
-      check both for correctness.</p>
-    <p>The tests run here are <strong>not</strong> unit tests. Unit testing is currently
-      only done for Node.js and only covers basic functionality. These integration tests
-      are how most of the functionality is tested.</p>
-    <br /><hr /><br />
-    <h3>test output</h3>
-    <pre id="output"></pre>
-  </section>
+		<style type="text/css">
+			body {
+				-webkit-user-select: none;
+				-webkit-app-region: drag;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h1>gardens test driver</h1>
+			<p>
+				Tests will be output to the page and to the console. Be sure to check both
+				for correctness.
+			</p>
+			<p>
+				The tests run here are <strong>not</strong> unit tests. Unit testing is
+				currently only done for Node.js and only covers basic functionality. These
+				integration tests are how most of the functionality is tested.
+			</p>
+			<br />
+			<hr />
+			<br />
+			<h3>test output</h3>
+			<pre id="output"></pre>
+		</section>
 
-  <script type="application/javascript" src="../dist/gardens.umd.js"></script>
-  <script type="application/javascript" src="index.js"></script>
-</body>
+		<script type="application/javascript" src="../dist/gardens.umd.js"></script>
+		<script type="application/javascript" src="index.js"></script>
+	</body>
 </html>

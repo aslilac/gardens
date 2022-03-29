@@ -1,18 +1,15 @@
 {
-  "name": "gardens",
-  "version": 2,
-  "scope": "partheseas",
-  "alias": [
-    "gardens",
-    "gardens.now.mckay.la"
-  ],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": {
-        "distDir": "doc"
-      }
-    }
-  ]
+	"name": "gardens",
+	"version": 2,
+	"scope": "partheseas",
+	"alias": ["gardens", "gardens.now.mckay.la"],
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/static-build",
+			"config": {
+				"distDir": "doc"
+			}
+		}
+	]
 }

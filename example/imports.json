@@ -1,0 +1,6 @@
+{
+	"imports": {
+		"gardens": "./gardens.config.ts",
+		"^/": "./build/"
+	}
+}

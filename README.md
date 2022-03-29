@@ -1,7 +1,4 @@
 # gardens
-![package version](https://img.shields.io/badge/dynamic/json?color=92db61&label=gardens&prefix=v&query=%24%5B%27dist-tags%27%5D.latest&url=https%3A%2F%2Fregistry.npmjs.com%2Fgardens)
-![stability](https://img.shields.io/badge/stability-release-66f29a.svg)
-[![build status](https://travis-ci.org/partheseas/gardens.svg?branch=master)](https://travis-ci.org/partheseas/gardens)
 
 Using gardens makes it easier to handle your log output and debugging code by giving you
 the ability to break your output into named scopes, handle errors in a unified way, and use
@@ -14,50 +11,61 @@ anywhere that JavaScript can run. If you want to add support for an environment 
 I don't know about feel free to open an issue!
 
 | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge" width="24px" height="24px" /></br>Edge | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" /></br>Firefox | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" /></br>Chrome | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" /></br>Safari | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" /></br>Opera | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" /></br>Electron |
-| --------- | --------- | --------- | --------- | --------- | --------- |
-- Node.js
-- Deno
-- React Native
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+-   Node.js
+-   Deno
+-   React Native
 
 ![Code and output sample](/media/gardens.png)
 
 ## Installation
+
 ```Shell
 yarn add gardens
 ```
+
 You should use Yarn and [pnp](https://yarnpkg.com/en/docs/pnp).
 
 ## Usage
-- [Site](https://mckay.la/gardens/)
-- [Documentation](https://gardens.now.sh)
+
+-   [Site](https://mckay.la/gardens/)
+-   [Documentation](https://gardens.now.sh)
 
 Depending on where you're using Gardens, you might need to do any of the following...
+
 ```JavaScript
 // CommonJS (Node.js, Electron)
 const gardens = require( 'gardens' );
 ```
+
 ```JavaScript
 // CommonJS (React Native)
 const gardens = require( 'gardens/native' );
 ```
+
 ```JavaScript
 // Bundled ES6 (Browsers, Rollup, Webpack, Parcel, etc.)
 import gardens from 'gardens';
 ```
+
 ```JavaScript
 // ES6 (Deno)
 import gardens from 'https://deno.land/x/gardens/mod.ts';
 ```
+
 ```HTML
 <!-- <script> (Browsers) -->
 <script type="application/javascript" src="https://unpkg.com/gardens@^4"></script>
 ```
 
 ### Managers
+
 Managers are a really powerful way to use gardens for larger codebases. For details
 on their usage and why you should use them, read their [documentation](/doc/managers.md).
 
 ### Configuration
+
 Configurations can be set per instance, and updated at any time. Each garden
 has the following options.
 
@@ -86,6 +94,7 @@ garden.configure({
 ```
 
 ### Configuring streams
+
 For the sake of being easy to use with custom outputs, each garden only
 cares that the stream given in its options implements a `write` method. One such
 browserland object that already implements a write function is `document`, but I
@@ -95,6 +104,7 @@ When setting a stream other than the default, the `outputType` is always set to
 text to keep things simple. If you want colors, be sure to set this option correctly.
 
 ### log, info, success, warn, warning, and fail
+
 These methods all just dump the arguments given out to the console like you would expect. The
 output is prefixed with the scope name and output type. (log, warning, etc.)
 
@@ -109,6 +119,7 @@ garden.fail( 'oh no!' )
 ```
 
 ### styled
+
 Takes a string and a CSS-style object, and prints the string using the given styles.
 Mostly useful in browsers where there is a lot of CSS console support.
 
@@ -122,6 +133,7 @@ garden.styled( 'Look at me!', {
 ```
 
 ### debug and trace
+
 The debug method is similar to `log`, but it will only print if
 `options.verbose` is truthy. If this is falsish then the call will do nothing.
 
@@ -135,6 +147,7 @@ garden.trace( 'look at my call stack!' )
 ```
 
 ### error, typeerror, referenceerror, and catch
+
 These methods will automagically create an `Error`, `TypeError` or `ReferenceError` using the
 first argument as the message argument when constructing it. It will then log the error
 including the full call stack for you to easily find where the error came from without
@@ -154,6 +167,7 @@ garden.catch( aThrownError )
 ```
 
 ### time and timeEnd
+
 Each method takes a String, Symbol, or undefined as the first argument. `time` should
 be called at the begin of what you would like to time with a name or `Symbol` representing
 what you are timing, and `timeEnd` should be called once the task has been completed with
@@ -170,6 +184,7 @@ garden.timeEnd( tracker )
 ```
 
 ### count
+
 Takes a String, Symbol, or undefined as an argument, and then logs how many times `count`
 has been called with that specific argument.
 
@@ -185,6 +200,7 @@ garden.count( secret ) // 2
 ```
 
 ### assert and friends
+
 Four assert functions are also provided for the sake of completeness. `assert`
 and `assert_eq` behave as you would expect. `deny` is basically `assert` but for
 things that should be falsey. `throws` takes a function that should throw, and will
@@ -208,5 +224,6 @@ garden.throws( () => variableThatDoesExist ) // Throws
 ```
 
 ### raw
+
 Passes all given arguments directly to the output stream, without scopes, time stamps, or
 any formatting. As the name implies, it just prints raw data.
